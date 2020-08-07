@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--User List View Controller-->
+        <scene sceneID="poT-4O-3Lj">
+            <objects>
+                <viewController storyboardIdentifier="UserListView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2v0-5v-nRw" customClass="UserListViewController" customModule="GithubDemoApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bx5-sX-6i1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" showsCancelButton="YES" showsScopeBar="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4CU-fc-LaQ">
+                                <rect key="frame" x="15" y="54" width="384" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="sjW-2I-Q4r"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                                <connections>
+                                    <outlet property="delegate" destination="2v0-5v-nRw" id="05e-es-bmv"/>
+                                </connections>
+                            </searchBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lC6-ge-xlU">
+                                <rect key="frame" x="0.0" y="124" width="414" height="728"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jD8-66-UxF">
+                                        <rect key="frame" x="10" y="0.0" width="394" height="718"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="2v0-5v-nRw" id="mLv-dh-aZw"/>
+                                            <outlet property="delegate" destination="2v0-5v-nRw" id="Pji-hf-JLH"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="jD8-66-UxF" secondAttribute="bottom" constant="10" id="41c-DZ-ejq"/>
+                                    <constraint firstAttribute="trailing" secondItem="jD8-66-UxF" secondAttribute="trailing" constant="10" id="XNf-0a-FNT"/>
+                                    <constraint firstItem="jD8-66-UxF" firstAttribute="leading" secondItem="lC6-ge-xlU" secondAttribute="leading" constant="10" id="bsT-hc-ZaB"/>
+                                    <constraint firstItem="jD8-66-UxF" firstAttribute="top" secondItem="lC6-ge-xlU" secondAttribute="top" id="ek9-CA-lGJ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="lC6-ge-xlU" firstAttribute="top" secondItem="4CU-fc-LaQ" secondAttribute="bottom" constant="10" id="83A-TM-Sao"/>
+                            <constraint firstItem="4CU-fc-LaQ" firstAttribute="trailing" secondItem="ONI-1q-253" secondAttribute="trailing" constant="-15" id="HOe-nY-wtY"/>
+                            <constraint firstItem="4CU-fc-LaQ" firstAttribute="top" secondItem="ONI-1q-253" secondAttribute="top" constant="10" id="J9S-Ka-Kip"/>
+                            <constraint firstItem="4CU-fc-LaQ" firstAttribute="leading" secondItem="ONI-1q-253" secondAttribute="leading" constant="15" id="Yi4-lr-Vm7"/>
+                            <constraint firstItem="lC6-ge-xlU" firstAttribute="leading" secondItem="ONI-1q-253" secondAttribute="leading" id="gNm-pM-LWo"/>
+                            <constraint firstItem="ONI-1q-253" firstAttribute="bottom" secondItem="lC6-ge-xlU" secondAttribute="bottom" constant="10" id="qEJ-PG-xWr"/>
+                            <constraint firstItem="ONI-1q-253" firstAttribute="trailing" secondItem="lC6-ge-xlU" secondAttribute="trailing" id="uhE-qZ-9gg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ONI-1q-253"/>
+                    </view>
+                    <connections>
+                        <outlet property="CheckoutConfigurationTableView" destination="jD8-66-UxF" id="Co5-Fv-beW"/>
+                        <outlet property="parentView" destination="lC6-ge-xlU" id="XxP-1U-bMz"/>
+                        <outlet property="searchBar" destination="4CU-fc-LaQ" id="TRx-Gf-pVi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rj0-dO-5tl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="142.02898550724638" y="24.776785714285712"/>
+        </scene>
+    </scenes>
+</document>
